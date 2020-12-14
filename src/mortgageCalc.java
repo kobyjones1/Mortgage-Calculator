@@ -22,10 +22,13 @@ public class mortgageCalc {
 		int principal;
 		
 		while(true){
-			System.out.println("Enter principal: ");
+			System.out.println("Enter principal (between $1K and $1M): ");
 			try {
-				principal = Integer.parseInt(userInput.next());	//Attempt to convert to a integer.
-				break;	//If the input converts properly the loop will stop here.
+				principal = Integer.parseInt(userInput.next()); //Attempt to convert to a integer.
+				
+				if (principal >= 1000 && principal <= 1_000_000){
+					break;	//If the input converts properly the loop will stop here.
+				}
 			}
 			catch(Exception e){
 				System.out.println("Invalid input.");
@@ -39,10 +42,13 @@ public class mortgageCalc {
 		byte period;
 		
 		while(true){
-			System.out.println("Enter period (in years): ");
+			System.out.println("Enter period (between 1 to 30 years): ");
 			try {
 				period = Byte.parseByte(userInput.next());	//Attempt to convert to a integer.
-				break;	//If the input converts properly the loop will stop here.
+				
+				if (period >= 1 && period <= 30){
+					break;	//If the input converts properly the loop will stop here.
+				}
 			}
 			catch(Exception e){
 				System.out.println("Invalid input.");
@@ -56,10 +62,13 @@ public class mortgageCalc {
 		float interest;
 		
 		while(true){
-			System.out.println("Enter interest rate: ");
+			System.out.println("Enter interest rate (between 1 and 100): ");
 			try {
-				interest = Float.parseFloat(userInput.next());	//Attempt to convert to a double.
-				break;	//If the input converts properly the loop will stop here.
+				interest = Float.parseFloat(userInput.next());
+				
+				if (interest >= 1 && interest <= 100){	//Attempt to convert to a float.
+					break;	//If the input converts properly the loop will stop here.
+				}
 			}
 			catch(Exception e){
 				System.out.println("Invalid input.");
